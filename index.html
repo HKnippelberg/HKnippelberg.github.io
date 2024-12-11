@@ -23,19 +23,12 @@
         </div>
     </main>
     <script>
+        function changeText() {
+            document.getElementById('dynamic-text').innerText = 'You clicked the button!';
+        }
         function menu() {
             document.getElementById("menu").classList.toggle("active");
         }
-
-        const menuButton = document.getElementById("menu");
-
-        menuButton.addEventListener("click", function() {
-            menu();
-        });
-
-        menuButton.addEventListener("touchend", function() {
-            menu();
-        });
 
     </script>
 </body>
