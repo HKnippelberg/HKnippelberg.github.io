@@ -82,13 +82,14 @@ h1{
 
 @media (max-width: 1090px) {
     #menu {
+        touch-action: manipulation;
         cursor: pointer;
         position: absolute;
         top: 0;
-        left: 0;
+        right: 0;
         opacity: 0;
         border: none;
-        padding: 55px 100%;
+        padding: 55px 40%;
         z-index: 1;
     }
     #menu-top-bar, #menu-bottom-bar {
