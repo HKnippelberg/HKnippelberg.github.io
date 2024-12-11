@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        button {
+            background-color: #45a040;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Test Website</h1>
+    </header>
+    <main>
+        <p>This is a simple webpage for testing live server functionality.</p>
+        <button onclick="changeText()">Click Me!</button>
+        <p id="dynamic-text">This text will change when you click the button.</p>
+    </main>
+    <script>
+        function changeText() {
+            document.getElementById('dynamic-text').innerText = 'You clicked the button!';
+        }
+    </script>
+</body>
+</html>
