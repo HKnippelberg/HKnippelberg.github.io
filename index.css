@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #454b5b;
+}
+
+main {
+    color: white;
+}
+
+h1{
+    text-shadow: 0 3px 0 gray;
+}
+
+#behind-main{
+    padding: 20px;
+    background-color: #21252e;
+    border-radius: 0 0 10px 10px;
+}
+
+#top-header{
+    background-color: #454b5b;
+    padding: 2px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 15px;
+}
+
+#menu {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 60px;
+    opacity: 0;
+    border: none;
+    padding: 55px 18%;
+    z-index: 1;
+}
+
+#menu-top-bar, #menu-bottom-bar {
+    position: absolute;
+    right: 8%;
+    padding: 3px 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 3.5px 0 gray;
+    transition: top 0.5s ease-in-out, padding 0.5s ease-in-out, right 1s ease-in-out;
+}
+#menu-top-bar {
+    top: 48px;
+}
+#menu-bottom-bar {
+    top: 67px;
+}
+
+#menu:hover ~ #menu-top-bar,
+#menu:hover ~ #menu-bottom-bar,
+#menu.active ~ #menu-top-bar,
+#menu.active ~ #menu-bottom-bar {
+    top: 42px;
+    padding: 20px 3px;
+    right: 35%;
+}
+
+#save {
+    background-color: rgb(148, 218, 8);
+    color: #21252e;
+    border: none;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 100px;
+}
+
+#save:hover {
+    background-color: #66a632;
+}
+
+@media (max-width: 1090px) {
+    #menu {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        border: none;
+        padding: 55px 100%;
+        z-index: 1;
+    }
+    #menu-top-bar, #menu-bottom-bar {
+        position: absolute;
+        right: 8%;
+        padding: 3px 20px;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 3.5px 0 gray;
+        transition: top 0.5s ease-in-out, padding 0.5s ease-in-out, right 1s ease-in-out;
+    }
+    #menu-top-bar {
+        top: 48px;
+    }
+    #menu-bottom-bar {
+        top: 67px;
+    } 
+    #menu:hover ~ #menu-top-bar,
+    #menu:hover ~ #menu-bottom-bar,
+    #menu.active ~ #menu-top-bar,
+    #menu.active ~ #menu-bottom-bar {
+        top: 42px;
+        padding: 20px 3px;
+        right: 90%;
+    }
+    #header-text-container {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.6s ease, visibility 0s linear;
+        transition-delay: 0.8s;
+    }
+    #menu:hover ~ #header-text-container,
+    #menu.active ~ #header-text-container {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
+    }
+    
+    #behind-main{
+      background-color: #21252e;
+      color: white;
+    }
+    #top-header{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    body{
+        background-color: #21252e
+    }
+}
+/* --------------------- Colors ------------------------
+#fabe20
+#131722
+#21252e
+#121621 */
