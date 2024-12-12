@@ -30,6 +30,15 @@
             document.getElementById("menu").classList.toggle("active");
         }
 
+        window.addEventListener('scroll', function() {
+        let scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollPosition > 10) {
+            document.getElementById("menu").classList.toggle("active");
+            
+        }
+    });
+
     </script>
 </body>
 </html>

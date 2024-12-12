@@ -136,7 +136,8 @@ h1{
         margin-right: 0;
     }
     body{
-        background-color: #21252e
+        background-color: #21252e;
+        height: 2000rem;
     }
 }
 /* --------------------- Colors ------------------------
