@@ -14,6 +14,7 @@
                 <button id="menu" onclick="menu()"></button>
                 <div id="menu-top-bar"></div>
                 <div id="menu-bottom-bar"></div>
+                <button id="close" onclick="menu()"></button>
                 <div id="header-text-container">
                     <h1 id="header-text">Editor</h1>
                 </div>
@@ -29,15 +30,6 @@
         function menu() {
             document.getElementById("menu").classList.toggle("active");
         }
-
-        window.addEventListener('scroll', function() {
-        let scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (scrollPosition > 10) {
-            document.getElementById("menu").classList.toggle("active");
-            
-        }
-    });
 
     </script>
 </body>
