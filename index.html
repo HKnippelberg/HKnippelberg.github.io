@@ -4,33 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <title>QR Editor</title>
+    <title>Editor</title>
     <link rel="icon" type="image/x-icon" href="/images/header.jpg">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+    <script src="index.js"></script>
 </head>
 <body>
     <main>
-        <div id="behind-main">
-            <div id="top-header">
-                <button id="menu" onclick="menu()"></button>
-                <div id="menu-top-bar"></div>
-                <div id="menu-bottom-bar"></div>
-                <button id="close" onclick="menu()"></button>
-                <div id="header-text-container">
-                    <h1 id="header-text">Editor</h1>
-                </div>
+        <div id="dev">
+            <h1>Sorry this resolution is not supported</h1>
+        </div>
+        <div id="top-header">
+            <button id="menu" onclick="menu()"></button>
+            <div id="menu-top-bar"></div>
+            <div id="menu-bottom-bar"></div>
+            <button id="close" onclick="menu()"></button>
+            <a id="edit-icon" href="index.html" ></a>
+            <a id="qrcode-icon" href="qrcode.html"></a>
+            <button id="contact-icon" onclick="scrollToSection()"></button>
+            <div id="header-text-container">
+                <h1 id="header-text">Edit your QR code</h1>
             </div>
-            <button id="save" onclick="changeText()">Save</button>
-            <p id="dynamic-text">This text will change when you click the button.</p>
+        </div>
+        <div id="border-t"></div>     
+        <div id="top-menu">
+            <div id="qr-container"></div>
+            <input type="color" id="colorInput" value="#000000" />
+            <input type="file" id="imageInput" accept="image/*" />
+            <button id="generate" onclick="generate()">Generate QR Code</button>
+
+        </div>  
+        <div id="contact-menu">
+
         </div>
     </main>
-    <script>
-        function changeText() {
-            document.getElementById('dynamic-text').innerText = 'You clicked the button!';
-        }
-        function menu() {
-            document.getElementById("menu").classList.toggle("active");
-        }
-
-    </script>
 </body>
 </html>

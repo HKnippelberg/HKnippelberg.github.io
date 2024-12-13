@@ -3,7 +3,8 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #454b5b;
+    background-color: #d4d9d5;
+    overflow-x: hidden;
 }
 
 main {
@@ -11,21 +12,19 @@ main {
 }
 
 h1{
-    text-shadow: 0 3px 0 gray;
+    text-shadow: 0 2px 0px darkgray;
 }
 
-#behind-main{
-    padding: 20px;
-    background-color: #21252e;
-    border-radius: 0 0 10px 10px;
+#dev {
+    visibility: hidden;
+    position: absolute;
 }
 
 #top-header{
-    background-color: #454b5b;
+    background-color: rgb(28, 28, 28);
     padding: 2px;
-    margin-left: 5%;
-    margin-right: 5%;
-    border-radius: 15px;
+    margin-top: 20px;
+    border-radius: 15px 15px 0 0;
 }
 
 #menu {
@@ -45,7 +44,7 @@ h1{
     padding: 3px 20px;
     background-color: white;
     border-radius: 15px;
-    box-shadow: 0 3.5px 0 gray;
+    box-shadow: 0 3.5px 0 rgba(70, 69, 69, 0.738);
     transition: top 0.5s ease-in-out, padding 0.5s ease-in-out, right 1s ease-in-out;
 }
 #menu-top-bar {
@@ -55,8 +54,6 @@ h1{
     top: 67px;
 }
 
-#menu:hover ~ #menu-top-bar,
-#menu:hover ~ #menu-bottom-bar,
 #menu.active ~ #menu-top-bar,
 #menu.active ~ #menu-bottom-bar {
     top: 42px;
@@ -70,23 +67,129 @@ h1{
     opacity: 0;
 }
 
-#save {
-    background-color: rgb(148, 218, 8);
-    color: #21252e;
+#edit-icon, #qrcode-icon, #contact-icon {
+    position: absolute;
     border: none;
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: 700;
+    padding: 25px;
+    border-radius: 18px;
+    right: 20%;
+    top: 37px;
     cursor: pointer;
-    border-radius: 100px;
+    background-color: #026095;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    z-index: 1;
+    visibility: hidden;
+    transition: opacity 0.5s linear, visibility 0s linear 0.5s;
 }
 
-#save:hover {
-    background-color: #66a632;
+#edit-icon::before, #qrcode-icon::before, #contact-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    background-size: inherit;
+    background-repeat: inherit;
+    background-position: inherit;
+    filter: invert(1);
+    z-index: -1;
 }
 
+#edit-icon {
+    background-image: url(../images/edit-icon.png);
+    right: 27%;
+}
+#qrcode-icon {
+    background-image: url(../images/qrcode-icon.png);
+    right: 20%;
+}
+#contact-icon {
+    background-image: url(../images/phone-call.png);
+    right: 13%;
+}
+
+#menu.active ~ #edit-icon,
+#menu.active ~ #qrcode-icon,
+#menu.active ~ #contact-icon {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s linear;
+    transition-delay: 0.8s;
+}
+
+#menu:not(.active) ~ #edit-icon,
+#menu:not(.active) ~ #qrcode-icon,
+#menu:not(.active) ~ #contact-icon {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0s linear;
+    transition-delay: 0s;
+}
+
+#top-header, #border-t, #top-menu{
+    margin-left: 5%;
+    margin-right: 5%;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+}
+#border-t{
+    background-color: #ffffff;
+    padding: 1px 0;
+}
+#top-menu{
+    margin-top: 0;
+    height: 20rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    background-color: rgb(127, 127, 127);
+    border-radius: 0 0 10px 10px;
+    position: relative;
+    padding-bottom: 20rem;
+}
+
+#name{
+    cursor: pointer;
+}
+
+#canvas {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+}
+
+/*#top-menu{
+    margin-top: 0;
+    height: 20rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 0 0 10px 10px;
+    position: relative;
+    z-index: -1;
+    background: inherit;
+    padding-bottom: 20rem;
+}
+#top-menu:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -3;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(0, 0, 0, 0.4);
+    filter: blur(10px);
+    margin: -20px;
+}*/
 @media (max-width: 1090px) {
+    #top-header{
+        margin-left: 1%;
+        margin-right: 1%;
+    }
     #menu {
         cursor: pointer;
         position: absolute;
@@ -101,9 +204,7 @@ h1{
         position: absolute;
         right: 8%;
         padding: 3px 20px;
-        background-color: white;
         border-radius: 15px;
-        box-shadow: 0 3.5px 0 gray;
         transition: top 0.5s ease-in-out, padding 0.5s ease-in-out, right 1s ease-in-out, transform 0.5s ease-in;
     }
     #menu-top-bar {
@@ -112,26 +213,22 @@ h1{
     #menu-bottom-bar {
         top: 67px;
     } 
-    #menu:hover ~ #menu-top-bar,
-    #menu:hover ~ #menu-bottom-bar,
     #menu.active ~ #menu-top-bar,
     #menu.active ~ #menu-bottom-bar{
         top: 42px;
         padding: 20px 3px;
         right: 85%;
     }
-    #menu:hover ~ #menu-bottom-bar,
     #menu.active ~ #menu-bottom-bar{
         transform: rotate(45deg);
     }
-    #menu:hover ~ #menu-top-bar,
     #menu.active ~ #menu-top-bar{
         transform: rotate(-45deg);
     }
     #close{
         border: none;
-        padding: 30px 30px;
-        left: 30px;
+        padding: 30px 45px;
+        left: 8%;
         top: 32.5px;
         cursor: pointer;
     }
@@ -144,25 +241,89 @@ h1{
         transition: opacity 0.6s ease;
         transition-delay: 0.8s;
     }
-    #menu:hover ~ #header-text-container,
     #menu.active ~ #header-text-container {
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.5s ease-in-out, 0.5s linear;
     }
-    
-    #behind-main{
-      background-color: #21252e;
-      color: white;
+    #edit-icon,
+    #qrcode-icon,
+    #contact-icon{
+        top: 37px;
     }
-    #top-header{
-        margin-left: 0;
-        margin-right: 0;
+    #edit-icon {
+        right: 60%;
     }
-    body{
-        background-color: #21252e;
+    #qrcode-icon {
+        right: 45%;
+    }
+    #contact-icon {
+        right: 30%;
+    }
+
+    #border-t, #top-menu, #top-header{
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    #top-menu{
+        margin-top: 0;
+        height: 20rem;
+        padding-bottom: 20rem;
     }
 }
+
+@media (max-width: 455px){
+    #header-text{
+        font-size: 1.5rem;
+    }
+    #edit-icon,
+    #qrcode-icon,
+    #contact-icon{
+        top: 37px;
+        padding: 17px
+    }
+    #edit-icon {
+        right: 65%;
+    }
+    #qrcode-icon {
+        right: 42.5%;
+    }
+    #contact-icon {
+        right: 20%;
+    }
+
+    #menu-top-bar, #menu-bottom-bar {
+        position: absolute;
+        right: 8%;
+        padding: 2px 15px;
+    }
+    #menu.active ~ #menu-top-bar,
+    #menu.active ~ #menu-bottom-bar{
+        top: 39px;
+        padding: 15px 2px;
+        right: 85%;
+    }
+    #menu-top-bar {
+        top: 43px;
+    }
+    #menu-bottom-bar {
+        top: 56px;
+    } 
+    
+}
+
+@media (max-width: 288px){
+    body {
+        visibility: hidden;
+    }
+
+    #dev {
+        margin-top: 10rem;
+        visibility: visible;
+    }
+}
+
+
 /* --------------------- Colors ------------------------
 #fabe20
 #131722
